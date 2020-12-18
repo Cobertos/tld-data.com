@@ -48,8 +48,8 @@
     <div class="tld-list">
       <span
         class="tld"
-        v-for="tld in filteredTLDs">
-        .{{tld}}
+        v-for="tld in filteredTLDs"
+        v-html="`.${tld}`">
       </span>
     </div>
     <p>Powered by <a href="https://github.com/Cobertos/tld-data/">tld-data @ GitHub</a></p>
@@ -57,6 +57,7 @@
 </template>
 
 <script>
+import fuzzy from 'fuzzy';
 import tldData from '@/deps/tld-data/tldData.json';
 Array.prototype.unique = function() {
   return Array.from(new Set(this));
@@ -101,13 +102,18 @@ export default {
 
       filtered = filtered
         .filter(o => this.showType[o.type]);
-      if(this.tldSearch !== '') {
-        filtered = filtered
-          .filter(o => o.tld.includes(this.tldSearch));
-      }
-
-      return filtered
+      const filteredStrs = filtered
         .map(o => o.tld);
+      if(this.tldSearch !== '') {
+        return fuzzy.filter(this.tldSearch, filteredStrs, {
+          pre: '<span class="tld-fuzzy-match">',
+          post: '</span>'
+        })
+        .map(o => o.string);
+      }
+      else {
+        return filteredStrs
+      }
     },
   }
 }
@@ -149,6 +155,10 @@ export default {
     border: 1px solid #222;
     padding: 2px;
     margin: 5px;
+
+    .tld-fuzzy-match {
+      color: $accent-color;
+    }
   }
 }
 </style>
