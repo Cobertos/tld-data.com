@@ -1,0 +1,3 @@
+[submodule "deps/tld-data"]
+	path = deps/tld-data
+	url = https://github.com/Cobertos/tld-data.git
