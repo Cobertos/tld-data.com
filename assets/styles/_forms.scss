@@ -1,16 +1,16 @@
 input[type='text'] {
   display: inline-block;
-  font-size: cRems(24px);
+  font-size: 24px;
   background: transparent;
-  margin: 0 cRems(4px);
-  height: cRems(29px);
-  padding: 0 cRems(4px);
+  margin: 0 4px;
+  height: 29px;
+  padding: 0 4px;
   border: 0;
-  border-bottom: cRems(1px) solid #FFF;
+  border-bottom: 1px solid #FFF;
   color: #FFF;
 
   &:focus {
-    border-bottom: cRems(1px) solid #FF0;
+    border-bottom: 1px solid #FF0;
     color: #FF0;
     outline: none;
   }
@@ -19,11 +19,11 @@ input[type='text'] {
 button {
   display: inline-flex;
   color: #FFF;
-  border: cRems(1px) solid #FFF;
+  border: 1px solid #FFF;
   padding: 0;
   background-color: transparent;
-  height: cRems(24px);
-  font-size: cRems(20px);
+  height: 24px;
+  font-size: 20px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -31,7 +31,7 @@ button {
 
   &:hover {
     background-color: rgba(255,255,255,0.2);
-    border: cRems(1px) solid #FF0;
+    border: 1px solid #FF0;
     color: #FF0;
   }
   &:active {
@@ -39,6 +39,6 @@ button {
   }
 
   &.square {
-    width: cRems(24px);
+    width: 24px;
   }
 }
