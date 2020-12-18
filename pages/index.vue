@@ -2,6 +2,13 @@
   <div>
     <div
       class="filter-controls">
+      <div>
+        <h2>tld-data</h2>
+        <p>Look at all those TLDs!<br>ICANN really let themselves go,,,</p>
+        <p>Powered by <a href="https://github.com/Cobertos/tld-data/">tld-data @ GitHub</a></p>
+        <p>Created by <a href="https://cobertos.com">Cobertos</a></p>
+      </div>
+
       <input
         type="text"
         v-model="tldSearch">
@@ -52,7 +59,6 @@
         v-html="`.${tld}`">
       </span>
     </div>
-    <p>Powered by <a href="https://github.com/Cobertos/tld-data/">tld-data @ GitHub</a></p>
   </div>
 </template>
 
@@ -123,11 +129,15 @@ export default {
 @import '@/assets/styles/_func.scss';
 
 .filter-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   margin: 20px;
+
   @include desktop {
-    display: flex;
-    align-items: center;
+    flex-direction: row;
     justify-content: space-around;
   }
 }

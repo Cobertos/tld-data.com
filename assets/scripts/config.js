@@ -1,3 +1,3 @@
-export const hostname = 'https://localhost';
-export const title = 'Now, where\'s that meme?';
-export const description = 'Haha, haha, aaaaahh, hha, ha, fuk, memes.';
+export const hostname = 'https://tld-data.com';
+export const title = 'tld-data';
+export const description = 'Look at all those TLDs!<br>ICANN really let themselves go,,,';
