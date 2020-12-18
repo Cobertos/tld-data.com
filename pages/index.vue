@@ -72,8 +72,6 @@ const tldTypes = tldData
   .map(o => o.type)
   .unique();
 
-
-console.log(tldData);
 export default {
   data() {
     return {

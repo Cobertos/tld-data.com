@@ -158,9 +158,6 @@ export default {
     //which is what we want
     trailingSlash: true
   },
-  generate: {
-    dir: 'public' //Vercel default
-  },
   // == Server ==
   server: {
     port: 8897,
